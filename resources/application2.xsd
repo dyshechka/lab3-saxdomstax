@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://martha.qweert.ru"
+        xmlns="http://martha.qweert.ru"
+        elementFormDefault="qualified">
+
+    <xsd:element name="application" type="applicationType"/>
+
+    <xsd:complexType name="applicationType">
+        <xsd:complexContent>
+            <xsd:extension base="item">
+                <xsd:sequence>
+                    <xsd:element name="codeWord" type="xsd:string"/>
+                    <xsd:element name="loanProductId" type="xsd:string"/>
+                    <xsd:element name="tradePoint" type="xsd:integer"/>
+                    <xsd:element name="incomeType" type="xsd:integer"/>
+                    <xsd:element name="monthlyIncome" type="xsd:integer"/>
+                    <xsd:element name="initialPayment" type="xsd:integer"/>
+                    <xsd:element name="loanTerm" type="xsd:integer"/>
+                    <xsd:element name="transferClaimAgree" type="xsd:boolean"/>
+                    <xsd:element name="goods" type="goodsType"/>
+                    <xsd:element name="person" type="person"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+
+    </xsd:complexType>
+
+    <xsd:complexType name="goodsType">
+        <xsd:sequence maxOccurs="unbounded">
+            <xsd:element name="good" type="good">
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="good">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="quantity" type="xsd:integer"/>
+            <xsd:element name="cost" type="xsd:float"/>
+        </xsd:sequence>
+        <xsd:attribute name="goodType" type="goodType"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="goodType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ВЫЧИСЛИТЕЛЬНАЯ ТЕХНИКА"/>
+            <xsd:enumeration value="БЫТОВАЯ ТЕХНИКА"/>
+            <xsd:enumeration value="КОМПЬЮТЕРНАЯ ПЕРИФЕРИЯ"/>
+            <xsd:enumeration value="БЫТОВАЯ ХИМИЯ"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="person">
+        <xsd:sequence>
+            <xsd:element name="firstName" type="xsd:string"/>
+            <xsd:element name="lastName" type="xsd:string"/>
+            <xsd:element name="patronymic" type="xsd:string"/>
+            <xsd:element name="birthDate" type="xsd:date"/>
+            <xsd:element name="birthPlace" type="xsd:string"/>
+            <xsd:element name="gender" type="xsd:integer"/>
+            <xsd:element name="documents" type="documentsType"/>
+            <xsd:element name="contacts" type="contactsType"/>
+        </xsd:sequence>
+        <xsd:attribute name="documnetId" type="xsd:IDREF"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="documentsType">
+        <xsd:sequence maxOccurs="5">
+            <xsd:element name="document" type="document">
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="document">
+        <xsd:sequence>
+            <xsd:element name="documentNumber" type="xsd:string"/>
+            <xsd:element name="documentSerialNumber" type="xsd:string"/>
+            <xsd:element name="documentType" type="xsd:integer"/>
+            <xsd:element name="issueDate" type="xsd:date"/>
+            <xsd:element name="issuedBy" type="xsd:string"/>
+            <xsd:element name="subdivisionCode" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="personId" type="xsd:ID"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="contactsType">
+        <xsd:sequence maxOccurs="4">
+            <xsd:element name="contact" type="contact">
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="contact">
+        <xsd:sequence>
+            <xsd:element name="contactType" type="xsd:string"/>
+            <xsd:element name="contactValue" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="item" abstract="true">
+        <xsd:sequence>
+            <xsd:element type="xsd:ID" name="itemID"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

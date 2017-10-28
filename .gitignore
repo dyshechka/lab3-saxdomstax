@@ -1,0 +1,5 @@
+out
+result.html
+# IntelliJ project files
+.idea
+*.iml

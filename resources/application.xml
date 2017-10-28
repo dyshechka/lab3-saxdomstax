@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<application xmlns="http://martha.qweert.ru">
+    <itemID>ID1</itemID>
+    <codeWord>КОДОВОЕ СЛОВО</codeWord>
+    <loanProductId>ПРЕМИУМ 17%</loanProductId>
+    <tradePoint>909205501</tradePoint>
+    <incomeType>1</incomeType>
+    <monthlyIncome>20000</monthlyIncome>
+    <initialPayment>1300</initialPayment>
+    <loanTerm>13</loanTerm>
+    <transferClaimAgree>true</transferClaimAgree>
+    <goods>
+        <good goodType="БЫТОВАЯ ТЕХНИКА">
+            <name>ХОЛОДИЛЬНИК</name>
+            <quantity>1</quantity>
+            <cost>20000</cost>
+        </good>
+        <good goodType="ВЫЧИСЛИТЕЛЬНАЯ ТЕХНИКА">
+            <name>КАЛЬКУЛЯТОР</name>
+            <quantity>2</quantity>
+            <cost>300</cost>
+        </good>
+        <good goodType="БЫТОВАЯ ХИМИЯ">
+            <name>ФЭЙРИ</name>
+            <quantity>1</quantity>
+            <cost>85</cost>
+        </good>
+    </goods>
+    <person>
+        <firstName>МАРТА</firstName>
+        <lastName>ХАРИТОНОВА</lastName>
+        <patronymic>ЛЕОНИДОВНА</patronymic>
+        <birthDate>1995-03-19</birthDate>
+        <birthPlace>СЫКТЫВКАР</birthPlace>
+        <gender>1</gender>
+        <documents>
+            <document>
+                <documentNumber>123456</documentNumber>
+                <documentSerialNumber>1714</documentSerialNumber>
+                <documentType>1</documentType>
+                <issueDate>2017-01-01</issueDate>
+                <issuedBy>МРО УФМС РОССИИ ПО ВЛАДИМИРСКОЙ ОБЛАСТИ</issuedBy>
+                <subdivisionCode>330-040</subdivisionCode>
+            </document>
+        </documents>
+        <contacts>
+            <contact>
+                <contactType>1</contactType>
+                <contactValue>9876543210</contactValue>
+            </contact>
+            <contact>
+                <contactType>2</contactType>
+                <contactValue>1234567890</contactValue>
+            </contact>
+        </contacts>
+    </person>
+</application>
