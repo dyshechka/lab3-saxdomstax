@@ -1,16 +1,15 @@
-package ru.qweert.martha;
-
-import ru.qweert.martha.domsax.DomSaxTransformer;
+package ru.qweert.martha.stax;
 
 import java.io.File;
 
-public class Transform {
+public class Main {
 
     public static void main(String[] args) {
         final File input = new File("resources/application.xml");
         final File schema = new File("resources/application2.xsd");
+        final String outputFileName = "result.html";
 
-        XmlTransformer transformer = new DomSaxTransformer();
-        transformer.xmlToHtml(input, schema);
+        StaxParser parser = new StaxParser();
+        parser.handle(input, schema, outputFileName);
     }
 }
